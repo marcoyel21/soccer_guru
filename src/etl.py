@@ -4,7 +4,11 @@ from datetime import datetime, timedelta
 leagues=[{"league":"Champions League",
            "league_id":8},
           {"league":"Premier League",
-           "league_id":2}]
+           "league_id":2},
+        {"league":"La liga",
+           "league_id":564},
+        {"league":"Liga Portugal",
+           "league_id":462}]
 
 
 # Load data from this week and past week
