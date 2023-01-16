@@ -20,7 +20,7 @@ with DAG(
     'soccerguru_predict',
     description = '2 step predict: API predict + create front',
     #“At 13:00 on Friday.”    
-    schedule_interval='0 13 * * 5',
+    schedule_interval='5 12 * * *',
     start_date = days_ago(1),
     tags=["football"],
 ) as dag:

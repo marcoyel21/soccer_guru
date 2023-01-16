@@ -20,7 +20,7 @@ with DAG(
     'soccerguru_etl',
     description = '2 step elt: API call + Preprocess',
     #“At 13:00 on Friday.”    
-    schedule_interval='0 13 * * 5',
+    schedule_interval='55 11 * * *',
     start_date = days_ago(1),
     tags=["football"],
 ) as dag:
