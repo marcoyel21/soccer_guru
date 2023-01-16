@@ -1,0 +1,5 @@
+
+#!/usr/bin/env bash
+
+# Send html file to bucket
+sudo gsutil cp /home/marcoyel21/airflow/dags/soccer_guru/src/front_end/index.html gs://bets_backend2
