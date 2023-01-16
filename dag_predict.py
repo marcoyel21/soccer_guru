@@ -9,10 +9,12 @@ import os
 
 path = os.path.dirname(os.path.abspath(__file__))
 path_predict=os.path.join(path, 'src/predict.py')
+path_html_to_bucket=os.path.join(path, 'src/html_to_bucket')
 
 
 params = {
-    'path_predict': path_predict}
+    'path_predict': path_predict,
+    'path_html_to_bucket': path_html_to_bucket}
 
 with DAG(
     'soccerguru_predict',
@@ -36,6 +38,12 @@ t1 = BashOperator(
     bash_command='python3 {{params.path_predict}}',
     dag=dag)
 
+t2 = BashOperator(
+    task_id='html_to_bucket',
+    depends_on_past=False,
+    params=params,
+    bash_command='{{params.path_html_to_bucket}} ',
+    dag=dag)
 
 alert2 = DiscordWebhookOperator(
     task_id= "discord_alert_finish",
@@ -46,4 +54,5 @@ alert2 = DiscordWebhookOperator(
 
 
 
-t1 >> alert2
+t1 >> t2
+t2 >> alert2
