@@ -1,0 +1,145 @@
+
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Am I HTML already?</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<h1>Soccerguru, weekend bets!</h1>
+<p>Probability of local team winning on major european leagues.</p>
+
+<h2>Premier League</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>local win bet</th>
+      <th>l_logo</th>
+      <th>local</th>
+      <th>visitor</th>
+      <th>v_logo</th>
+      <th>date</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.703806</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/9/9.png" width="60" ></td>
+      <td>Manchester City</td>
+      <td>Wolverhampton Wanderers</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/29/29.png" width="60" ></td>
+      <td>2023-01-22</td>
+      <td>14:00:00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.198275</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/7/71.png" width="60" ></td>
+      <td>Leeds United</td>
+      <td>Brentford</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/12/236.png" width="60" ></td>
+      <td>2023-01-22</td>
+      <td>14:00:00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.375473</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/1/1.png" width="60" ></td>
+      <td>West Ham United</td>
+      <td>Everton</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/13/13.png" width="60" ></td>
+      <td>2023-01-21</td>
+      <td>15:00:00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.314549</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/10/42.png" width="60" ></td>
+      <td>Leicester City</td>
+      <td>Brighton & Hove Albion</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/14/78.png" width="60" ></td>
+      <td>2023-01-21</td>
+      <td>15:00:00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.260438</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/20/52.png" width="60" ></td>
+      <td>AFC Bournemouth</td>
+      <td>Nottingham Forest</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/31/63.png" width="60" ></td>
+      <td>2023-01-21</td>
+      <td>15:00:00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.273658</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/1/65.png" width="60" ></td>
+      <td>Southampton</td>
+      <td>Aston Villa</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/15/15.png" width="60" ></td>
+      <td>2023-01-21</td>
+      <td>15:00:00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.622992</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/9/9.png" width="60" ></td>
+      <td>Manchester City</td>
+      <td>Tottenham Hotspur</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/6/6.png" width="60" ></td>
+      <td>2023-01-19</td>
+      <td>20:00:00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.155838</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/19/51.png" width="60" ></td>
+      <td>Crystal Palace</td>
+      <td>Manchester United</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/14/14.png" width="60" ></td>
+      <td>2023-01-18</td>
+      <td>20:00:00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.389337</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/8/8.png" width="60" ></td>
+      <td>Liverpool</td>
+      <td>Chelsea</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/18/18.png" width="60" ></td>
+      <td>2023-01-21</td>
+      <td>12:30:00</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.345151</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/19/19.png" width="60" ></td>
+      <td>Arsenal</td>
+      <td>Manchester United</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/14/14.png" width="60" ></td>
+      <td>2023-01-22</td>
+      <td>16:30:00</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.287946</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/19/51.png" width="60" ></td>
+      <td>Crystal Palace</td>
+      <td>Newcastle United</td>
+      <td><img src="https://cdn.sportmonks.com/images/soccer/teams/20/20.png" width="60" ></td>
+      <td>2023-01-21</td>
+      <td>17:30:00</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
