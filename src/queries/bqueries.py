@@ -9,7 +9,7 @@ SELECT  id,league_id,localteam_id,visitorteam_id,localteam_position,visitorteam_
  AVG(localteam_score)
   OVER (
     ORDER BY date
-    ROWS BETWEEN 3 PRECEDING AND 0 FOLLOWING
+    ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
   ) AS local_goals,
    AVG(visitorteam_score)
   OVER (
