@@ -8,7 +8,17 @@ leagues=[{"league":"Champions League",
         {"league":"La liga",
            "league_id":564},
         {"league":"Liga Portugal",
-           "league_id":462}]
+           "league_id":462},
+        {"league":"Ligue 1",
+           "league_id":301},
+         {"league":"Bundesliga",
+           "league_id":82},
+        {"league":"Serie A",
+           "league_id":384},
+        {"league":"Eredivise",
+           "league_id":72},
+        {"league":"Europa League",
+           "league_id":5}]
 
 
 # Load data from this week and past week
