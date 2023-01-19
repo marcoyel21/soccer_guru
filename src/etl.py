@@ -2,9 +2,9 @@ from lib import etl
 from datetime import datetime, timedelta
 
 leagues=[{"league":"Champions League",
-           "league_id":8},
-          {"league":"Premier League",
            "league_id":2},
+          {"league":"Premier League",
+           "league_id":8},
         {"league":"La liga",
            "league_id":564},
         {"league":"Liga Portugal",
