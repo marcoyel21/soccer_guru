@@ -14,16 +14,21 @@ SELECT  id,league_id,localteam_id,visitorteam_id,localteam_position,visitorteam_
     ORDER BY date
     ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
   ) AS local_goals,
+  AVG(visitorteam_score)
+  OVER (
+    ORDER BY date
+    ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
+  ) AS visitor_goals,
+
+#############################################
+# Local Variables  #
+#############################################
  AVG(l_passes.total)
   OVER (
     ORDER BY date
     ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
   ) AS l_passes_total,
-
-#############################################
-# Local Variables  #
-#############################################
-
+  
    AVG(l_passes.accurate)
   OVER (
     ORDER BY date
@@ -151,7 +156,12 @@ SELECT  id,league_id,localteam_id,visitorteam_id,localteam_position,visitorteam_
 #############################################
 # Visitor Variables #
 #############################################
-
+   AVG(v_passes.total)
+  OVER (
+    ORDER BY date
+    ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
+  ) AS v_passes_total, 
+  
    AVG(v_passes.accurate)
   OVER (
     ORDER BY date
