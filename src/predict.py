@@ -53,6 +53,17 @@ for i in body['visitorteam_id']:
     v_logos.append(logo)
 
 # Create webpage
+
+# Create webpage
+context = {'local': l_names, 'l_logo': l_logos,
+    'visitor': v_names, 'v_logo': v_logos}
+context = pd.DataFrame(data=context)
+
+df_concat = pd.concat([body, context,probs_1], axis=1)
+df_concat=df_concat[["league_id","local win bet","l_logo",'local','visitor','v_logo','date','time']]
+
+
+
 leagues=[{"league":"Champions League",
            "league_id":2},
           {"league":"Premier League",
