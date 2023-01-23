@@ -27,7 +27,7 @@ df = predictions.to_dataframe()
 
 
 # make table
-body=df[["localteam_id","visitorteam_id","date","time"]]
+body=df[["league_id","localteam_id","visitorteam_id","date","time"]]
 probs=df["predicted_label_probs"].apply(pd.Series)
 probs_1=probs[0].apply(pd.Series)
 probs_1.rename(columns = {'label':'label',"prob":"local win bet"}, inplace = True)
@@ -52,20 +52,41 @@ for i in body['visitorteam_id']:
     v_names.append(name)
     v_logos.append(logo)
 
-
 # Create webpage
-context = {'local': l_names, 'l_logo': l_logos,
-    'visitor': v_names, 'v_logo': v_logos}
-context = pd.DataFrame(data=context)
+leagues=[{"league":"Champions League",
+           "league_id":2},
+          {"league":"Premier League",
+           "league_id":8},
+        {"league":"La liga",
+           "league_id":564},
+        {"league":"Liga Portugal",
+           "league_id":462},
+        {"league":"Ligue 1",
+           "league_id":301},
+         {"league":"Bundesliga",
+           "league_id":82},
+        {"league":"Serie A",
+           "league_id":384},
+        {"league":"Eredivise",
+           "league_id":72},
+        {"league":"Europa League",
+           "league_id":5}]
+tables=""
+for i in range(len(leagues)):
+    league_name=leagues[i]["league"]
+    league_number=str(leagues[i]["league_id"])
+    league_header =f"""
+    <h2>{league_name}</h2>
+    """
+    df=df_concat.loc[df_concat["league_id"]==league_number]
+    df=df.drop("league_id", axis=1)
+    # Formato de imagen a logos
+    league_probs=df.to_html(escape=False,
+                   formatters=dict(l_logo=path_to_image_html,v_logo=path_to_image_html))
 
-df_concat = pd.concat([body, context,probs_1], axis=1)
-df_concat=df_concat[["local win bet","l_logo",'local','visitor','v_logo','date','time']]
-
-
-# Formato de imagen a logos
-p_l=df_concat.to_html(escape=False,
-               formatters=dict(l_logo=path_to_image_html,v_logo=path_to_image_html))
-
+    tables=tables+league_header+league_probs
+    
+    
 
 # Creo html
 template= """
@@ -85,15 +106,12 @@ template= """
 <p>Probability of local team winning on major european leagues.</p>
 """
 
-premier_league ="""
-<h2>Premier League</h2>
-"""
 
 end_html="""
 </body>
 </html>
 """
-index=template+premier_league+p_l+end_html
+index=template+tables+end_html
 with open(script_path_html, 'w+') as fh:
     fh.write(index)
     
