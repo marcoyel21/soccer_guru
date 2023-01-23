@@ -333,7 +333,6 @@ SELECT
     visitorteam_position,
     local_goals,
     visitor_goals,
-    time as time
 FROM
   `matches.processed_data`
 WHERE
