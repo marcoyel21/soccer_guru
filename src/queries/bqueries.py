@@ -1,7 +1,9 @@
-from datetime import datetime
+from datetime import datetime, timedelta
+
+today = datetime.today() - timedelta(days=1)
 
 # get current date
-today = str(datetime.now().date())
+today = str(today.date())
 
 
 process_data_query = """
