@@ -62,6 +62,10 @@ context = pd.DataFrame(data=context)
 df_concat = pd.concat([body, context,probs_1], axis=1)
 df_concat=df_concat[["league_id","local win bet","l_logo",'local','visitor','v_logo','date','time']]
 
+# dates
+df_concat['date'] = pd.to_datetime(df_concat['AdmissionDate'])
+df_concat.sort_values(by='date')
+
 
 
 leagues=[{"league":"Champions League",
