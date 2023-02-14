@@ -18,7 +18,7 @@ with DAG(
     'soccerguru_train_model',
     description = '2 step elt: API call + Preprocess',
     #“At 13:00 on Friday.”    
-    schedule_interval='0 18 * * 5',
+    schedule_interval='0 19 * * 5',
     start_date = days_ago(1),
     tags=["football"],
 ) as dag:
